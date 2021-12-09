@@ -493,7 +493,12 @@ body {
 {
     .liste
     {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: auto;
+    }
+
+    .liste .achats table
+    {
+        font-size: var(--smaller-font-size);
     }
     
     .achats
@@ -507,8 +512,12 @@ body {
     }
 }
 
-@media (max-width: 480px)
+@media (max-width: 500px)
 {
+    .liste.achats table
+    {
+        font-size: var(--small-font-size);
+    }
     .cardBox
     {
         grid-template-columns: repeat(1,1fr);
