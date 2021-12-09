@@ -60,6 +60,8 @@ body {
     font-size: var(--normal-font-size);
 }
 
+/* ========== RULES NAV BAR GAUCHE ========== */
+
 .container
 {
     position: relative;
@@ -74,6 +76,13 @@ body {
     background: var(--red);
     border-left: 10px solid var(--red);
     overflow: hidden;
+    transition: 0.5s;
+}
+
+.nav.active
+{
+    transition: 0.5s;
+    width: 80px;
 }
 
 .nav ul
@@ -187,6 +196,146 @@ body {
 
 .logo
 {
-    width: 5em;
-    height: 5em;
+    width: 60px;
+    height: 60px;
+}
+
+/* ========== RULES NAV BAR HAUT ========== */
+.main
+{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+
+}
+
+.main.active
+{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+
+.nav__haut
+{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.toggle
+{
+    position: relative;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    /* background: #ccc; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+
+.search
+{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+
+.search label
+{
+    position: relative;
+    width: 100%;
+}
+
+.search label input
+{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    font-family: var(--body-font);
+    outline: none;
+    border: 1px solid var(--light-black);
+}
+
+.search label ion-icon
+{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2em;
+}
+
+.user ion-icon
+{
+    position: relative;
+    min-width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+/* ========== RULES INDICATEURS BOX ========== */
+.cardBox
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card
+{
+    position: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.cardBox .card .card__data
+{
+    position: relative;
+    font-weight: var(--font-medium);
+    font-size: 2.5em;
+    color: var(--red);
+}
+
+.cardBox .card .card__title
+{
+   color: card(--light-black);
+   font-size: 1.1em;
+   margin-top: 5px;
+}
+
+.cardBox .card .card__icon
+{
+    font-size: 3.5em;
+    color: var(--light-black);
+}
+
+.cardBox .card:hover
+{
+    background: var(--red);
+}
+
+.cardBox .card:hover .card__data,
+.cardBox .card:hover .card__title,
+.cardBox .card:hover .card__icon
+{
+    color: var(--white);
 }
