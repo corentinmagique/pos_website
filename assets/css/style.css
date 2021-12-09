@@ -339,3 +339,202 @@ body {
 {
     color: var(--white);
 }
+
+/* ========== RULES LISTE ACHAT ========== */
+.liste
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.liste .achats
+{
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+}
+
+.liste__title
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.liste__title h2
+{
+    font-weight: var(--font-semi-bold);
+    color: var(--red);
+}
+
+.buton
+{
+    position: relative;
+    padding: 5px 10px;
+    background: var(--red);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+
+}
+
+.liste table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.liste table thead td
+{
+    font-weight: var(--font-semi-bold);
+}
+
+.liste .achats table tr
+{
+    color: var(--black);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.liste .achats table tr:last-child
+{
+    border-bottom: none;
+}
+
+.liste .achats table tbody tr:hover
+{
+    background: var(--red);
+    color: var(--white);
+}
+
+.liste .achats table tr td
+{
+    padding: 10px;
+}
+
+.liste .achats table tr td:last-child
+{
+    text-align: end;
+}
+
+.liste .achats table tr td:nth-child(2),
+.liste .achats table tr td:nth-child(3),
+.liste .achats table tr td:nth-child(4)
+{
+    text-align: center;
+}
+
+.statut
+{
+    padding: 2px 4px;
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: var(--font-medium);
+}
+
+.statut.expedie
+{
+    background: #8de02c;
+}
+
+.statut.preparation
+{
+    background: #FFC44D;
+}
+
+.statut.annule
+{
+    background: #f00;
+}
+
+/* ========== RESPONSIVE RULES ========== */
+@media (max-width: 991px)
+{
+    .nav
+    {
+        left: -300px;
+    }
+
+    .nav.active
+    {
+        width: 300px;
+        left: 0;
+    }
+
+    .main
+    {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active
+    {
+        left: 300px;
+    }
+
+    .cardBox
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+}
+
+@media (max-width: 768px)
+{
+    .liste
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+    
+    .achats
+    {
+        overflow-x: hidden;
+    } 
+
+    .statut
+    {
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px)
+{
+    .cardBox
+    {
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .nav
+    {
+        width: 100%;
+        left: -100%;
+        z-index: 1000;
+    }
+
+    .nav.active
+    {
+        width: 100%;
+        left: 0;
+    }
+
+    .toggle
+    {
+        z-index: 1001;
+    }
+
+    .main.active .toggle
+    {
+        color: #fff;
+    }
+}
+
